@@ -9,13 +9,15 @@ const resetBtn = document.getElementById("reset");
 incrementBtn.addEventListener("click", () => {
   counter++;
   counterValue.innerHTML = counter;
-  counter;
 });
 
 //Decrement the value of the counter
 decrementBtn.addEventListener("click", () => {
-  counter--;
-  counterValue.innerHTML = counter;
+  if (counter > 0) {
+    //the decrement button will only decrement the counter when it's greater than 0. If the counter is already at 0, clicking the decrement button will have no effect, ensuring that the counter doesn't go below 0.
+    counter--;
+    counterValue.innerHTML = counter;
+  }
 });
 
 //Reset the counter to zero
